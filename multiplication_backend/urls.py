@@ -15,10 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from multiplication_backend.multiply.views import MultiplyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('multiply/?$', MultiplyView.as_view())
+    re_path('multiply/?$', MultiplyView.as_view())
 ]
